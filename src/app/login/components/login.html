@@ -9,6 +9,7 @@
             <p class="message">Already registered? <a href="#" (click)="toggleDiv()">Sign In</a></p>
         </div>
         <div *ngIf="!edited">
+            <p class="message">{{errorMsg}}</p>
             <input type="text" [(ngModel)]="user.email" placeholder="username"/>
             <input type="password" [(ngModel)]="user.password" placeholder="password" (keydown.Enter)="handleKeyEvent( $event, 'Enter' )"/>
             <button (click)="login()">login</button>

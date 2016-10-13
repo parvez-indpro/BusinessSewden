@@ -27,7 +27,6 @@ export class AuthenticationService {
             return true;
         }
         return false;
-
     }
 
     checkCredentials() {

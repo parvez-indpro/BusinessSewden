@@ -4,6 +4,16 @@
     <div class="content">
         <span>Congratulations, you have successfully logged in!!</span>
         <br />
+        </div>
+    <div class="values">
+        <p>First Name: <input [(ngModel)]="firstname" id="firstname" type="text" ></p>
+        <p>Last Name: <input [(ngModel)]="lastname" id="lastname" type="text" ></p>
+        <p>Age: <input [(ngModel)]="age" id="age" type="number" class="values"></p>
+    </div>
+    <div>
+        <button  class="btn waves-effect waves-light" type="submit" name="submit" >Submit</button>
+    </div>
+    <div>
         <a (click)="logout()" href="#">Click Here to logout</a>
     </div>
 </div>

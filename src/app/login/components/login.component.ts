@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
     login() {
         if (!this._service.login(this.user)) {
             this.errorMsg = 'Failed to login';
-            this.edited = true;
         }
     }
 
@@ -31,7 +30,6 @@ export class LoginComponent implements OnInit {
     }
 
     handleKeyEvent(): void {
-        console.log("Enter");
         this.login();
     }
 
