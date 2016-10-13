@@ -6,7 +6,8 @@ import {User} from '../models/user';
 @Component({
     selector: 'login-form',
     providers: [AuthenticationService],
-    templateUrl: './app/login/components/login.html'
+    templateUrl: './app/login/components/login.html',
+    styleUrls: ['./app/login/components/login.component.css']
 })
 
 export class LoginComponent implements OnInit {
@@ -32,6 +33,10 @@ export class LoginComponent implements OnInit {
     handleKeyEvent(): void {
         console.log("Enter");
         this.login();
+    }
+
+    toggleDiv(): void {
+        this.edited = !this.edited;
     }
 
 }

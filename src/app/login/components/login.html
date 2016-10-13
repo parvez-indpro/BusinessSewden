@@ -1,11 +1,18 @@
-<h1>Login</h1>
-<div *ngIf="edited==true">
-    <span>Enter valid username and password.</span>
-</div>
-<div>
-    <p>Email: <input [(ngModel)]="user.email" id="email" type="email" class="validate"></p>
-    <p>Password: <input [(ngModel)]="user.password" id="password" type="password" class="validate" (keydown.Enter)="handleKeyEvent( $event, 'Enter' )"></p>
-</div>
-<div>
-    <button (click)="login()" class="btn waves-effect waves-light" type="submit" name="action" >Login</button>
+
+<div class="login-page">
+    <div class="form">
+        <div *ngIf="edited">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#" (click)="toggleDiv()">Sign In</a></p>
+        </div>
+        <div *ngIf="!edited">
+            <input type="text" [(ngModel)]="user.email" placeholder="username"/>
+            <input type="password" [(ngModel)]="user.password" placeholder="password" (keydown.Enter)="handleKeyEvent( $event, 'Enter' )"/>
+            <button (click)="login()">login</button>
+            <p class="message">Not registered? <a href="#" (click)="toggleDiv()">Create an account</a></p>
+        </div>
+    </div>
 </div>
