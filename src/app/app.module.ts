@@ -8,6 +8,7 @@ import {TaskComponent} from "./todo/components/task.component";
 import {LoginComponent} from "./login/components/login.component";
 import {HomeComponent} from "./home/components/home.component";
 import {ProductListComponent} from "./products/components/product-list.component";
+import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
 
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from "@angular/forms";
@@ -25,7 +26,8 @@ import {FormsModule} from "@angular/forms";
         AboutComponent,
         LoginComponent,
         HomeComponent,
-        ProductListComponent
+        ProductListComponent,
+        ProductFilterPipe
     ],
     providers: [
         appRoutingProviders

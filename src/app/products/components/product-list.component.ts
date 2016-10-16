@@ -1,17 +1,19 @@
 import {Component, OnInit} from "@angular/core";
+import {IProduct} from "../models/product";
+import {ProductFilterPipe} from "../filters/product-filter.pipe";
 
 @Component({
     templateUrl: './app/products/components/product-list.html',
     styleUrls: ['./app/products/components/product-list.component.css'],
-
+    pipes: [ProductFilterPipe]
 })
 
 export class ProductListComponent implements OnInit {
-    pageTitle: string = 'Product List';
-    imageWidth: number = 50;
-    imageMargin: number = 2;
-    showImage: boolean = false;
-    products: any[] = [
+    pageTitle:string = 'Product List';
+    imageWidth:number = 50;
+    imageMargin:number = 2;
+    showImage:boolean = false;
+    products:IProduct[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -65,15 +67,15 @@ export class ProductListComponent implements OnInit {
     ];
 
 
-    toggleImage(): void {
+    toggleImage():void {
         this.showImage = !this.showImage;
     }
 
-    ngOnInit(): void {
+    ngOnInit():void {
 
     }
 
-    onRatingClicked(message: string): void {
+    onRatingClicked(message:string):void {
         this.pageTitle = 'Product List: ' + message;
     }
 }

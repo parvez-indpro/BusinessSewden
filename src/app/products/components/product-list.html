@@ -8,7 +8,7 @@
         <div class='row'>
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
-                <input type='text' [(ngModel)]='listFilter' />
+                <input type='text' [(ngModel)]='listFilter'/>
             </div>
         </div>
         <div class='row' *ngIf='listFilter'>
@@ -36,11 +36,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor='let product of products'>
+                <tr *ngFor='let product of products | productFilter: listFilter'>
                     <td>
-                        <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName | uppercase' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
+                        <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName | uppercase'
+                             [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                     </td>
-                    <td> <a [routerLink]="['ProductDetail',{id: product.productId}]">
+                    <td><a [routerLink]="['ProductDetail',{id: product.productId}]">
                         {{product.productName}}
                     </a>
                     </td>
