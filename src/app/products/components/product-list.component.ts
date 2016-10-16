@@ -4,8 +4,8 @@ import {ProductFilterPipe} from "../filters/product-filter.pipe";
 
 @Component({
     templateUrl: './app/products/components/product-list.html',
-    styleUrls: ['./app/products/components/product-list.component.css'],
-    pipes: [ProductFilterPipe]
+    styleUrls: ['./app/products/components/product-list.component.css']
+
 })
 
 export class ProductListComponent implements OnInit {
