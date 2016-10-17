@@ -1,0 +1,28 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+        </div>
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='employees && employees.length'>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor='let employee of employees '>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.designation }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

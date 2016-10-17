@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Ajay",
+    "designation": "Manager"
+  },
+  {
+    "id": 2,
+    "name": "Roy",
+    "designation": "Trainee"
+  },
+  {
+    "id": 3,
+    "name": "Ajith",
+    "designation": "Developer"
+  },
+  {
+    "id": 4,
+    "name": "Sanjana",
+    "designation": "Designer"
+  },
+  {
+    "id": 5,
+    "name": "Ajay",
+    "designation": "Designer"
+  },
+  {
+    "id": 6,
+    "name": "Pooja",
+    "designation": "Trainee"
+  }
+  ]

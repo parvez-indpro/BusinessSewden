@@ -8,6 +8,7 @@ import {AboutComponent} from "./about/components/about.component";
 import {TaskComponent} from "./todo/components/task.component";
 import {LoginComponent} from "./login/components/login.component";
 import {HomeComponent} from "./home/components/home.component";
+import {EmployeeComponent} from "./employees/components/employees.component";
 import {ProductListComponent} from "./products/components/product-list.component";
 import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
 import {StarComponent} from "./shared/star/components/star.component";
@@ -31,7 +32,8 @@ import {FormsModule} from "@angular/forms";
         HomeComponent,
         ProductListComponent,
         ProductFilterPipe,
-        StarComponent
+        StarComponent,
+        EmployeeComponent
 
     ],
     providers: [
