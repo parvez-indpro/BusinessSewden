@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/components/login.component";
 import {HomeComponent} from "./home/components/home.component";
 import {ProductListComponent} from "./products/components/product-list.component";
 import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
+import {StarComponent} from "./shared/star/components/star.component";
 
 import {routing, appRoutingProviders} from './app.routing';
 import {FormsModule} from "@angular/forms";
@@ -27,7 +28,8 @@ import {FormsModule} from "@angular/forms";
         LoginComponent,
         HomeComponent,
         ProductListComponent,
-        ProductFilterPipe
+        ProductFilterPipe,
+        StarComponent
     ],
     providers: [
         appRoutingProviders

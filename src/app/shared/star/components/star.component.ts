@@ -3,8 +3,8 @@ import { Component, OnChanges, Input,
 
 @Component({
     selector: 'ai-star',
-    templateUrl: './star.component.html',
-    styleUrls: ['./star.component.css']
+    templateUrl: './app/shared/star/components/star.html',
+    styleUrls: ['./app/shared/star/components/star.component.css']
 })
 
 export class StarComponent implements OnChanges {
@@ -16,7 +16,7 @@ export class StarComponent implements OnChanges {
     ngOnChanges(): void {
         // Convert x out of 5 starts
         // to y out of 86px width
-        this.starWidth = this.rating * 86 / 5;
+        this.starWidth = this.rating * 102 / 5;
     }
 
     onClick(): void {
