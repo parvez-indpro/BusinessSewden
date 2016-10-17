@@ -1,13 +1,12 @@
 import {Component, OnInit} from "@angular/core";
 import {IProduct} from "../models/product";
 import {ProductService} from "../services/product.service";
-
+import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'pm-products',
     templateUrl: './app/products/components/product-list.html',
-    styleUrls: ['./app/products/components/product-list.component.css'],
-    providers:[ProductService]
+    styleUrls: ['./app/products/components/product-list.component.css']
 })
 
 export class ProductListComponent implements OnInit {
@@ -16,10 +15,10 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     products: IProduct[];
-    private _productService;
     listFilter: string;
-    constructor(private _productService: ProductService){
+    errorMessage: string;
 
+    constructor(private _productService: ProductService) {
     }
 
     toggleImage(): void {
@@ -27,7 +26,11 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts();
+        this._productService.getProducts()
+            .subscribe(
+                products => this.products = products,
+                error =>  this.errorMessage = <any>error);
+
     }
 
     onRatingClicked(message: string): void {
