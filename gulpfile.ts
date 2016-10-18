@@ -7,6 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const tsProject = tsc.createProject("tsconfig.json");
 const tslint = require('gulp-tslint');
 const runSequence = require('run-sequence');
+const trimlines = require('gulp-trimlines');
 
 /**
  * Remove build directory.
@@ -25,6 +26,16 @@ gulp.task('tslint', () => {
         }))
         .pipe(tslint.report());
 });
+
+/**
+ Trim leading and/or trailing spaces per line
+ */
+gulp.task('trim-text', function () {
+    return gulp.src('*.txt')
+        .pipe(trimlines())
+        .pipe(gulp.dest('./src/'));
+});
+
 
 /**
  * Compile TypeScript sources and create sourcemaps in build directory.
@@ -91,9 +102,15 @@ gulp.task('build', function (callback) {
         'clean',
         function () {
             runSequence(
-                'compile',
-                'resources',
-                'libs',
-                callback);
+                'trim-text',
+                function () {
+                    runSequence(
+                        'compile',
+                        'resources',
+                        'libs',
+                        callback);
+                });
         });
+
+
 });
