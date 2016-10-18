@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {IProduct} from "../models/product";
 import {ProductService} from "../services/product.service";
-import {Observable} from 'rxjs/Observable';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
     selector: 'pm-products',
@@ -18,7 +18,9 @@ export class ProductListComponent implements OnInit {
     listFilter: string;
     errorMessage: string;
 
-    constructor(private _productService: ProductService) {
+    constructor(private _productService: ProductService,
+                private route: ActivatedRoute,
+                private router: Router) {
     }
 
     toggleImage(): void {
@@ -29,8 +31,14 @@ export class ProductListComponent implements OnInit {
         this._productService.getProducts()
             .subscribe(
                 products => this.products = products,
-                error =>  this.errorMessage = <any>error);
+                error => this.errorMessage = <any>error);
 
+    }
+
+    onSelect(product: IProduct) {
+        console.log(1);
+        // this.router.navigate(['productdetail', product.productId]);
+        this.router.navigate(['productdetail']);
     }
 
     onRatingClicked(message: string): void {

@@ -10,6 +10,7 @@ import {LoginComponent} from "./login/components/login.component";
 import {HomeComponent} from "./home/components/home.component";
 import {EmployeeComponent} from "./employees/components/employees.component";
 import {ProductListComponent} from "./products/components/product-list.component";
+import {ProductDetailComponent} from "./productdetail/components/product-detail.component";
 import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
 import {StarComponent} from "./shared/star/components/star.component";
 import {AppRoutingModule } from './app.routing';
@@ -33,8 +34,8 @@ import {FormsModule} from "@angular/forms";
         ProductListComponent,
         ProductFilterPipe,
         StarComponent,
-        EmployeeComponent
-
+        EmployeeComponent,
+        ProductDetailComponent
     ],
     bootstrap: [AppComponent]
 })
