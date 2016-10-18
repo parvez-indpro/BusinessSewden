@@ -108,6 +108,7 @@ gulp.task('build', function (callback) {
                         'compile',
                         'resources',
                         'libs',
+
                         callback);
                 });
         });
