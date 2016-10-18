@@ -12,7 +12,7 @@ import {EmployeeComponent} from "./employees/components/employees.component";
 import {ProductListComponent} from "./products/components/product-list.component";
 import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
 import {StarComponent} from "./shared/star/components/star.component";
-import {routing, appRoutingProviders} from './app.routing';
+import {AppRoutingModule } from './app.routing';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -21,7 +21,7 @@ import {FormsModule} from "@angular/forms";
         FormsModule,
         HttpModule,
         JsonpModule,
-        routing
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
@@ -35,9 +35,6 @@ import {FormsModule} from "@angular/forms";
         StarComponent,
         EmployeeComponent
 
-    ],
-    providers: [
-        appRoutingProviders
     ],
     bootstrap: [AppComponent]
 })
