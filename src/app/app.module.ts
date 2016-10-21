@@ -1,19 +1,17 @@
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule, JsonpModule}    from '@angular/http';
+import {HttpModule}    from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 import {AppComponent} from "./app.component";
+import {AppRoutingModule} from "./app.routing";
 import {TaskListComponent} from "./todo/components/task-list.component";
 import {AboutComponent} from "./about/components/about.component";
 import {TaskComponent} from "./todo/components/task.component";
 import {LoginComponent} from "./login/components/login.component";
 import {HomeComponent} from "./home/components/home.component";
 import {EmployeeComponent} from "./employees/components/employees.component";
-import {ProductListComponent} from "./products/components/product-list.component";
-import {ProductDetailComponent} from "./productdetail/components/product-detail.component";
-import {ProductFilterPipe} from "./products/filters/product-filter.pipe";
-import {StarComponent} from "./shared/star/components/star.component";
-import {AppRoutingModule } from './app.routing';
+import {ProductModule} from "./products/product.module";
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -21,7 +19,7 @@ import {FormsModule} from "@angular/forms";
         BrowserModule,
         FormsModule,
         HttpModule,
-        JsonpModule,
+        ProductModule,
         AppRoutingModule
     ],
     declarations: [
@@ -31,11 +29,7 @@ import {FormsModule} from "@angular/forms";
         AboutComponent,
         LoginComponent,
         HomeComponent,
-        ProductListComponent,
-        ProductFilterPipe,
-        StarComponent,
-        EmployeeComponent,
-        ProductDetailComponent
+        EmployeeComponent
     ],
     bootstrap: [AppComponent]
 })

@@ -3,22 +3,17 @@ import {RouterModule} from '@angular/router';
 import {TaskListComponent} from "./todo/components/task-list.component";
 import {AboutComponent} from "./about/components/about.component";
 import {LoginComponent} from "./login/components/login.component";
-import {HomeComponent} from "./home/components/home.component";
-import {ProductListComponent} from "./products/components/product-list.component";
-import {ProductDetailComponent} from "./productdetail/components/product-detail.component";
 import {EmployeeComponent} from "./employees/components/employees.component";
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            {path: '', redirectTo: 'login', pathMatch: 'full'},
+            {path: 'employees', component: EmployeeComponent, data: {title: 'Employee List'}},
             {path: 'tasks', component: TaskListComponent, data: {title: 'TaskList'}},
             {path: 'about', component: AboutComponent, data: {title: 'About'}},
             {path: 'login', component: LoginComponent, data: {title: 'Login'}},
-            {path: 'home', component: HomeComponent, data: {title: 'Home'}},
-            {path: 'products', component: ProductListComponent, data: {title: 'Product List'}},
-            {path: 'employees', component: EmployeeComponent, data: {title: 'Employee List'}},
-            {path: 'productdetail', component: ProductDetailComponent, data: {title: 'Product Detail'}}
+            {path: '', redirectTo: 'login', pathMatch: 'full'},
+            {path: '**', redirectTo: 'login', pathMatch: 'full'}
         ])
     ],
     exports: [
