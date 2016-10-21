@@ -4,7 +4,6 @@ import {AuthenticationService} from '../services/authentication.service';
 import {User} from '../models/user';
 
 @Component({
-    selector: 'login-form',
     providers: [AuthenticationService],
     templateUrl: './app/login/components/login.html',
     styleUrls: ['./app/login/components/login.component.css']
